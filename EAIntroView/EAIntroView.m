@@ -69,7 +69,7 @@
     self.backgroundColor = [UIColor blackColor];
     _scrollingEnabled = YES;
     _titleViewY = 20.f;
-    _pageControlY = 70.f;
+    _pageControlY = 40.f;
     _skipButtonY = EA_EMPTY_PROPERTY;
     _skipButtonSideMargin = 10.f;
     _skipButtonAlignment = EAViewAlignmentRight;
@@ -265,7 +265,7 @@
 - (UIButton *)skipButton {
     if (!_skipButton) {
         _skipButton = [[UIButton alloc] init];
-        [_skipButton setTitle:NSLocalizedString(@"Skip", nil) forState:UIControlStateNormal];
+        [_skipButton setTitle:NSLocalizedString(@"SKIP", nil) forState:UIControlStateNormal];
         [self applyDefaultsToSkipButton];
     }
     
@@ -589,10 +589,10 @@
     NSUInteger page = (NSUInteger)(offset);
     
     if (page==(_pages.count-1)){
-        [_skipButton setTitle:NSLocalizedString(@"Done", nil) forState:UIControlStateNormal];
+        [_skipButton setTitle:NSLocalizedString(@"DONE", nil) forState:UIControlStateNormal];
     }
     else{
-        [_skipButton setTitle:NSLocalizedString(@"Skip", nil) forState:UIControlStateNormal];
+        [_skipButton setTitle:NSLocalizedString(@"SKIP", nil) forState:UIControlStateNormal];
     }
     if (page == (_pages.count - 1) && self.swipeToExit) {
         self.alpha = ((self.scrollView.frame.size.width*_pages.count)-self.scrollView.contentOffset.x)/self.scrollView.frame.size.width;
